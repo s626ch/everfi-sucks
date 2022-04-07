@@ -3,6 +3,7 @@
 // @description i hate this and so do you, why not make it easier?
 // @match       *://platform.everfi.net/curriculum/*
 // @grant       GM_addStyle
+// @version     0.2
 // ==/UserScript==
 
 /*--- Create a button in a container div.  It will be styled and
@@ -21,7 +22,10 @@ document.getElementById ("myButton").addEventListener (
 );
 
 function ButtonClickAction (zEvent) {
-    document.getElementsByClassName("button")[0].removeAttribute("disabled");
+    var buttonAmount = document.querySelectorAll("button.button");
+    for(let i=0;i<buttonAmount.length;i++){
+        document.getElementsByClassName("button")[i].removeAttribute("disabled");
+    }
 }
 
 
