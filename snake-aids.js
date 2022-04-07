@@ -3,7 +3,7 @@
 // @description i hate this and so do you, why not make it easier?
 // @match       *://platform.everfi.net/curriculum/*
 // @grant       GM_addStyle
-// @version     0.3.5
+// @version     0.4
 // ==/UserScript==
 
 /*--- Create a button in a container div.  It will be styled and
@@ -101,5 +101,10 @@ GM_addStyle ( `
 #site-container .navigate-links a.forward-link {
     background-color: #ea472c !important;
     color: #fff !important;
+}
+#site-container .hide-until-page-complete {
+display:block!important;
+opacity:unset!important;
+pointer-events:unset!important;
 }
 ` );
