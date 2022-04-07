@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name        lol-gg-ez-everfi
+// @name        everfi-sucks
 // @description i hate this and so do you, why not make it easier?
 // @match       *://platform.everfi.net/curriculum/*
 // @grant       GM_addStyle
-// @version     0.4.2
+// @version     0.4.7
 // ==/UserScript==
 
 /*--- Create a button in a container div.  It will be styled and
@@ -107,5 +107,16 @@ display:block!important;
 opacity:unset!important;
 pointer-events:unset!important;
 visibility: visible!important;
+}
+/*#site-container .horizontal-scroll-layout>.region>.block-list div {
+overflow:hidden;
+}*/
+#site-container .horizontal-scroll-layout>.region>.block-list button{
+    bottom: 75px !important;
+    left: 0 !important;
+    right: unset !important;
+    z-index: 5000 !important;
+    max-width:32% !important;
+    width:100% !important;
 }
 ` );
