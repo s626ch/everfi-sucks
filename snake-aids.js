@@ -3,7 +3,7 @@
 // @description i hate this and so do you, why not make it easier?
 // @match       *://platform.everfi.net/curriculum/*
 // @grant       GM_addStyle
-// @version     0.3.1
+// @version     0.3.5
 // ==/UserScript==
 
 /*--- Create a button in a container div.  It will be styled and
@@ -26,6 +26,7 @@ function ButtonClickAction (zEvent) {
     for(let i=0;i<buttonAmount.length;i++){
         document.getElementsByClassName("button")[i].removeAttribute("disabled");
     }
+    //! THIS IS VERY BUGGY BUT I'M INCLUDING IT ANYWAY -------------------------------------------------
     // force active dialog options to be always visible, i hate this delay
     if(document.getElementsByClassName("dialogue-response active")!=null){
         var dialOpts = document.getElementsByClassName("dialogue-response active");
@@ -36,6 +37,17 @@ function ButtonClickAction (zEvent) {
             document.getElementsByClassName("dialogue-response active")[j].style.display = 'block';
         }
     }
+    // force dialog message to be shown
+    if(document.getElementsByClassName("dialog dialogue-prompt")!=null){
+       var dialogMsg = document.getElementsByClassName("dialog dialogue-prompt");
+       for(let msg=0;msg<dialogMsg.length;msg++){
+            document.getElementsByClassName("dialog dialogue-prompt")[msg].removeAttribute('style');
+            document.getElementsByClassName("dialog dialogue-prompt")[msg].style.visbility = 'visible';
+            document.getElementsByClassName("dialog dialogue-prompt")[msg].style.opacity = 'initial';
+            document.getElementsByClassName("dialog dialogue-prompt")[msg].style.display = 'block';
+       }
+    }
+    //! ------------------------------------------------------------------------------------------------
     // enable dialog buttons
     var dialogButtons = document.querySelectorAll("button.dialogue-button");
     for(let o=0;o<dialogButtons.length;o++){
