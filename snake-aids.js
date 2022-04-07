@@ -3,7 +3,7 @@
 // @description i hate this and so do you, why not make it easier?
 // @match       *://platform.everfi.net/curriculum/*
 // @grant       GM_addStyle
-// @version     0.2
+// @version     0.3
 // ==/UserScript==
 
 /*--- Create a button in a container div.  It will be styled and
@@ -11,7 +11,7 @@
 */
 var zNode = document.createElement ('div');
 zNode.innerHTML = '<button id="myButton" type="button">'
-                + 'enable disabled buttons</button>'
+                + 'accelerate</button>'
                 ;
 zNode.setAttribute ('id', 'myContainer', 'class', 'row');
 document.body.appendChild (zNode);
@@ -26,7 +26,23 @@ function ButtonClickAction (zEvent) {
     for(let i=0;i<buttonAmount.length;i++){
         document.getElementsByClassName("button")[i].removeAttribute("disabled");
     }
+    // force active dialog options to be always visible, i hate this delay
+    if(document.getElementsByClassName("dialogue-response active")!=null){
+        var dialOpts = document.getElementsByClassName("dialogue-response active");
+        for(let j=0;j<dialOpts.length;j++){
+            document.getElementsByClassName("dialogue-response active")[j].removeAttribute('style');
+            document.getElementsByClassName("dialogue-response active")[j].style.visbility = 'visible';
+            document.getElementsByClassName("dialogue-response active")[j].style.opacity = 'initial';
+            document.getElementsByClassName("dialogue-response active")[j].style.display = 'block';
+        }
+    }
+    // enable dialog buttons
+    var dialogButtons = document.querySelectorAll("button.dialogue-button");
+    for(let o=0;o<buttonAmount.length;o++){
+        document.getElementsByClassName("dialogue-button")[o].removeAttribute("disabled");
+    }
 }
+
 
 
 document.onmousedown=disableclick;
