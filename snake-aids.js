@@ -3,7 +3,7 @@
 // @description i hate this and so do you, why not make it easier?
 // @match       *://platform.everfi.net/curriculum/*
 // @grant       GM_addStyle
-// @version     0.3
+// @version     0.3.1
 // ==/UserScript==
 
 /*--- Create a button in a container div.  It will be styled and
@@ -38,7 +38,7 @@ function ButtonClickAction (zEvent) {
     }
     // enable dialog buttons
     var dialogButtons = document.querySelectorAll("button.dialogue-button");
-    for(let o=0;o<buttonAmount.length;o++){
+    for(let o=0;o<dialogButtons.length;o++){
         document.getElementsByClassName("dialogue-button")[o].removeAttribute("disabled");
     }
 }
