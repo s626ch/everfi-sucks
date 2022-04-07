@@ -3,7 +3,7 @@
 // @description i hate this and so do you, why not make it easier?
 // @match       *://platform.everfi.net/curriculum/*
 // @grant       GM_addStyle
-// @version     0.4
+// @version     0.4.1
 // ==/UserScript==
 
 /*--- Create a button in a container div.  It will be styled and
@@ -70,7 +70,7 @@ if(event.button==2)
 GM_addStyle ( `
     #myContainer {
             position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
     font-size: 20px;
     margin: 0px;
