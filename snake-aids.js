@@ -37,7 +37,7 @@ if(event.button==2)
 //--- Style our newly added elements using CSS.
 GM_addStyle ( `
     #myContainer {
-            position: absolute;
+            position: fixed;
     bottom: 0;
     left: 0;
     font-size: 20px;
