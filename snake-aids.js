@@ -3,7 +3,7 @@
 // @description i hate this and so do you, why not make it easier?
 // @match       *://platform.everfi.net/curriculum/*
 // @grant       GM_addStyle
-// @version     0.5.1-dev
+// @version     0.5.4-dev
 // ==/UserScript==
 
 // accelerate button,m this calls the buttonclickaction function
@@ -89,6 +89,31 @@ function chapFunction(chapEvent) {
 function pgFunction(pgEvent) {
     console.log("TODO: NEXT PAGE")
     console.log(window.location.href)
+    let currentPage = String(window.location.href)
+    let pageLink
+    let pageNum
+    let nextNum
+    let goalPage
+    let intPageNum
+    pageLink = currentPage.slice(0,-2);
+    pageNum = currentPage.slice(-2);
+    for(let ai=1;ai<9;ai++){
+       let bruhCheck = "0" + ai;
+       let bruhNum = "0" + (ai+1)
+       if(pageNum==bruhCheck){
+           nextNum = bruhNum
+       }
+    }
+    intPageNum = parseInt(pageNum)
+    // console.log(pageLink)
+    console.log(pageNum)
+    if(intPageNum>=10){
+        goalPage = pageLink + String(intPageNum+1);
+    } else {
+        goalPage = pageLink + nextNum
+    }
+    console.log(goalPage)
+    window.location.assign(goalPage)
 }
 
 document.onmousedown=disableclick;
@@ -139,10 +164,10 @@ GM_addStyle ( `
         width:100%;
     }
     #chapButt {
-    border-left: 1.5px solid white;
+    border-left: 2px solid white;
     }
     #pgButt {
-    border-right: 1.5px solid white;
+    border-right: 2px solid white;
     }
     /* span / a buttons */
 #site-container .disabled, #site-container [disabled=disabled] {
