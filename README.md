@@ -21,5 +21,5 @@ if the userscript doesn't install, here are some manual instructions:
 * file > save or ctrl+s
 * ???
 * profit!
-<br>
-if you can't understand those, old install instructions are still kept [in this file](/old-install.md)
+
+if you can't understand those, old install instructions are still kept [in this file](old-install.md)
