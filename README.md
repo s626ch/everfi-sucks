@@ -10,7 +10,7 @@ requires: Tampermonkey<br>
 [Chrome / Edge](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en) - [Firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/)<br>
 <br>
 
-once the extension is installed, try going to [here][https://raw.githubusercontent.com/smolyoshino/everfi-sucks/master/snake-aids.user.js]
+once the extension is installed, try going to [here](https://raw.githubusercontent.com/smolyoshino/everfi-sucks/master/snake-aids.user.js)
 
 if the userscript doesn't install, here are some manual instructions:
 * go to [the github viewer page for the userscript][https://github.com/smolyoshino/everfi-sucks/blob/master/snake-aids.user.js]
