@@ -13,7 +13,7 @@ requires: Tampermonkey<br>
 once the extension is installed, try going to [here](https://raw.githubusercontent.com/smolyoshino/everfi-sucks/master/snake-aids.user.js)
 
 if the userscript doesn't install, here are some manual instructions:
-* go to [the github viewer page for the userscript][https://github.com/smolyoshino/everfi-sucks/blob/master/snake-aids.user.js]
+* go to [the github viewer page for the userscript](https://github.com/smolyoshino/everfi-sucks/blob/master/snake-aids.user.js)
 * click "raw"
 * copy the source of the script
 * open the tampermonkey extension panel and click "Create a new script..."
@@ -21,3 +21,5 @@ if the userscript doesn't install, here are some manual instructions:
 * file > save or ctrl+s
 * ???
 * profit!
+<br>
+if you can't understand those, old install instructions are still kept [in this file](/old-install.md)
