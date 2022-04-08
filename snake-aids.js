@@ -3,18 +3,17 @@
 // @description i hate this and so do you, why not make it easier?
 // @match       *://platform.everfi.net/curriculum/*
 // @grant       GM_addStyle
-// @version     0.5-dev
+// @version     0.5.1-dev
 // ==/UserScript==
 
 // accelerate button,m this calls the buttonclickaction function
-var zNode = document.createElement ('div');
+var zNode = document.createElement('div');
 zNode.innerHTML = '<button id="myButton" type="button">'
                 + 'accelerate</button>'
                 ;
-zNode.setAttribute ('id', 'myContainer', 'class', 'row');
-document.body.appendChild (zNode);
-//--- Activate the newly added button.
-document.getElementById ("myButton").addEventListener (
+zNode.setAttribute('id','myContainer','class','row');
+document.body.appendChild(zNode);
+document.getElementById("myButton").addEventListener (
     "click", ButtonClickAction, false
 );
 
@@ -23,22 +22,33 @@ var chNext = document.createElement('div');
 chNext.innerHTML = '<button id="chapButt" type="button">'
                 + 'next chapter</button>'
                 ;
-chNext.setAttribute ('id', 'chapCont', 'class', 'row');
-document.body.appendChild (chNext);
+chNext.setAttribute('id','chapCont','class','row');
+document.body.appendChild(chNext);
+document.getElementById("chapButt").addEventListener (
+    "click", chapFunction, false
+);
 
 // next page button
 var pgNext = document.createElement('div');
 pgNext.innerHTML = '<button id="pgButt" type="button">'
                 + 'next page</button>'
                 ;
-pgNext.setAttribute ('id', 'pgCont', 'class', 'row');
-document.body.appendChild (pgNext);
+pgNext.setAttribute('id','pgCont','class','row');
+document.body.appendChild(pgNext);
+document.getElementById("pgButt").addEventListener (
+    "click", pgFunction, false
+);
 
 // function for accelerate button
-function ButtonClickAction (zEvent) {
+function ButtonClickAction(zEvent) {
     var buttonAmount = document.querySelectorAll("button.button");
     for(let i=0;i<buttonAmount.length;i++){
         document.getElementsByClassName("button")[i].removeAttribute("disabled");
+    }
+    // fix irl-introduced issue
+    var buttonAmount2 = document.querySelectorAll("button.btn");
+    for(let btn2=0;btn2<buttonAmount2.length;btn2++){
+        document.getElementsByClassName("btn")[btn2].removeAttribute("disabled");
     }
     //! THIS IS VERY BUGGY BUT I'M INCLUDING IT ANYWAY -------------------------------------------------
     // force active dialog options to be always visible, i hate this delay
@@ -69,7 +79,17 @@ function ButtonClickAction (zEvent) {
     }
 }
 
+//function for chapter
+function chapFunction(chapEvent) {
+    console.log("TODO: NEXT CHAPTER IN MODULE")
+    console.log(window.location.href)
+}
 
+//function for page
+function pgFunction(pgEvent) {
+    console.log("TODO: NEXT PAGE")
+    console.log(window.location.href)
+}
 
 document.onmousedown=disableclick;
 function disableclick(event)
