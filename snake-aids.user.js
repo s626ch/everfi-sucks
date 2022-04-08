@@ -4,6 +4,7 @@
 // @match       *://platform.everfi.net/curriculum/*
 // @grant       GM_addStyle
 // @version     0.6-release
+// @author      smolyoshino
 // ==/UserScript==
 
 // accelerate button,m this calls the buttonclickaction function
