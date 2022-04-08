@@ -3,24 +3,38 @@
 // @description i hate this and so do you, why not make it easier?
 // @match       *://platform.everfi.net/curriculum/*
 // @grant       GM_addStyle
-// @version     0.4.7
+// @version     0.5-dev
 // ==/UserScript==
 
-/*--- Create a button in a container div.  It will be styled and
-    positioned with CSS.
-*/
+// accelerate button,m this calls the buttonclickaction function
 var zNode = document.createElement ('div');
 zNode.innerHTML = '<button id="myButton" type="button">'
                 + 'accelerate</button>'
                 ;
 zNode.setAttribute ('id', 'myContainer', 'class', 'row');
 document.body.appendChild (zNode);
-
 //--- Activate the newly added button.
 document.getElementById ("myButton").addEventListener (
     "click", ButtonClickAction, false
 );
 
+// next chapter button
+var chNext = document.createElement('div');
+chNext.innerHTML = '<button id="chapButt" type="button">'
+                + 'next chapter</button>'
+                ;
+chNext.setAttribute ('id', 'chapCont', 'class', 'row');
+document.body.appendChild (chNext);
+
+// next page button
+var pgNext = document.createElement('div');
+pgNext.innerHTML = '<button id="pgButt" type="button">'
+                + 'next page</button>'
+                ;
+pgNext.setAttribute ('id', 'pgCont', 'class', 'row');
+document.body.appendChild (pgNext);
+
+// function for accelerate button
 function ButtonClickAction (zEvent) {
     var buttonAmount = document.querySelectorAll("button.button");
     for(let i=0;i<buttonAmount.length;i++){
@@ -68,7 +82,7 @@ if(event.button==2)
 
 //--- Style our newly added elements using CSS.
 GM_addStyle ( `
-    #myContainer {
+    #myContainer, #chapCont, #pgCont {
             position: fixed;
     top: 0;
     left: 0;
@@ -79,7 +93,19 @@ GM_addStyle ( `
     width: 100%;
     text-align: center;
     }
-    #myButton {
+    #chapCont {
+    top: 37px;
+    width:50%;
+    right:0;
+    left:unset;
+    }
+    #pgCont {
+    top: 37px;
+    width:50%;
+    right:unset;
+    left:0;
+    }
+    #myButton, #chapButt, #pgButt {
         cursor:                 pointer;
         background:none;
         color:white;
@@ -91,6 +117,12 @@ GM_addStyle ( `
         box-shadow: 0px 0px 50px -12px #000000;
         font-family: Helvetica Neue, monospace;
         width:100%;
+    }
+    #chapButt {
+    border-left: 1.5px solid white;
+    }
+    #pgButt {
+    border-right: 1.5px solid white;
     }
     /* span / a buttons */
 #site-container .disabled, #site-container [disabled=disabled] {
