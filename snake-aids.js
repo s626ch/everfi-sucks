@@ -3,7 +3,7 @@
 // @description i hate this and so do you, why not make it easier?
 // @match       *://platform.everfi.net/curriculum/*
 // @grant       GM_addStyle
-// @version     0.5.4-dev
+// @version     0.6-release
 // ==/UserScript==
 
 // accelerate button,m this calls the buttonclickaction function
@@ -81,13 +81,40 @@ function ButtonClickAction(zEvent) {
 
 //function for chapter
 function chapFunction(chapEvent) {
-    console.log("TODO: NEXT CHAPTER IN MODULE")
     console.log(window.location.href)
+    let currentPage = String(window.location.href)
+    let chapLink
+    let chapNum
+    let nextChapNum
+    let goalChap
+    let intChapNum
+    chapLink = currentPage.slice(0,-6);
+    chapNum = currentPage.slice(-6);
+    chapNum = chapNum.slice(0,-4);
+    for(let aoi=1;aoi<9;aoi++){
+       let bruhChapCheck = "0" + aoi;
+       let bruhChapNum = "0" + (aoi+1)
+       if(chapNum==bruhChapCheck){
+           nextChapNum = bruhChapNum;
+       }
+       else if(chapNum==="09"){
+           nextChapNum = "10";
+       }
+    }
+    intChapNum = parseInt(chapNum)
+    // console.log(pageLink)
+    console.log(chapNum)
+    if(intChapNum>=10){
+        goalChap = chapLink + String(intChapNum+1) + "/p01";
+    } else {
+        goalChap = chapLink + nextChapNum + "/p01";
+    }
+    console.log(goalChap)
+    window.location.assign(goalChap)
 }
 
 //function for page
 function pgFunction(pgEvent) {
-    console.log("TODO: NEXT PAGE")
     console.log(window.location.href)
     let currentPage = String(window.location.href)
     let pageLink
@@ -101,7 +128,10 @@ function pgFunction(pgEvent) {
        let bruhCheck = "0" + ai;
        let bruhNum = "0" + (ai+1)
        if(pageNum==bruhCheck){
-           nextNum = bruhNum
+           nextNum = bruhNum;
+       }
+       else if(pageNum==="09"){
+           nextNum = "10";
        }
     }
     intPageNum = parseInt(pageNum)
