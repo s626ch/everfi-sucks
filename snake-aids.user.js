@@ -3,7 +3,7 @@
 // @description i hate this and so do you, why not make it easier?
 // @match       *://platform.everfi.net/curriculum/*
 // @grant       GM_addStyle
-// @version     0.6-release
+// @version     0.6.1-release
 // @author      smolyoshino
 // ==/UserScript==
 
