@@ -1,5 +1,6 @@
 # THESE ARE THE OLD INSTALL INSTRUCTIONS.
 <br>
+
 once the extension is installed, right click it, then click options<br>
 ![right click > options](images/rclick-opts.png)<br>
 then, click the `[+]` to create a script<br>
