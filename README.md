@@ -23,8 +23,8 @@ if the userscript doesn't install, here are some manual instructions:
 * profit!
 
 if you can't understand those, old install instructions are still kept [in this file](old-install.md)
-<br>
-<br>
+<br><br><br>
+<br><br><br>
 <a href="https://github.com/smolyoshino/everfi-sucks/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=smolyoshino/everfi-sucks" />
 </a>
