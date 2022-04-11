@@ -29,4 +29,4 @@ if you can't understand those, old install instructions are still kept [in this 
   <img src="https://contrib.rocks/image?repo=smolyoshino/everfi-sucks" />
 </a>
 
-[contrib.rocks](https://contrib.rocks).
+[contrib.rocks](https://contrib.rocks)
